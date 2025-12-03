@@ -1,47 +1,98 @@
-# Deepfake Detection API
+# Deepfake Image Detection
 
-## Running the API
+A full-stack AI-powered application for detecting deepfake and AI-generated images using deep learning.
 
-1. Install dependencies:
+## 🚀 Features
 
-```bash
-cd AI/api
-pip install -r requirements.txt
-```
+- **AI-Powered Detection**: Uses EfficientNet-B0 deep learning model for accurate deepfake detection
+- **Real-time Analysis**: Fast inference with confidence scores and detailed results
+- **Modern UI**: Clean, professional React/Next.js frontend with drag-and-drop support
+- **High Accuracy**: Trained on 140K real and fake face images dataset
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-2. Start the server:
+## 📋 Prerequisites
 
-```bash
-python main.py
-```
+- Python 3.8+
+- Node.js 18+
+- pip (Python package manager)
+- npm
 
-3. Test the API:
+## 🛠️ Installation
 
-```bash
-curl -X POST "http://localhost:8000/predict" \
-  -H "accept: application/json" \
-  -H "Content-Type: multipart/form-data" \
-  -F "file=@image.jpg"
-```
+### Backend Setup
 
-## Running the Frontend
+1. Navigate to the API directory:
+    ```bash
+    cd AI/api
+    ```
 
-1. Install dependencies:
+2. Create a virtual environment:
+    ```bash
+    python -m venv venv
+    ```
 
-```bash
-cd frontend
-npm install
-```
+3. Activate the virtual environment:
+
+    **Windows:**
+    ```bash
+    venv\Scripts\activate
+    ```
+    
+    **macOS/Linux:**
+    ```bash
+    source venv/bin/activate
+    ```
+
+4. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5. Ensure the trained model is placed at:
+    ```
+    AI/models/model.pth
+    ```
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
+
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+## 🚀 Running the Application
+
+### Start the Backend Server
+
+1. Navigate to the API directory:
+    ```bash
+    cd AI/api
+    ```
+
+2. Activate virtual environment (if not already activated)
+
+3. Start the server:
+    ```bash
+    python main.py
+    ```
+
+The API will be available at `http://localhost:8000`
+
+### Start the Frontend
+
+1. Navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
 
 2. Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-```bash
-npm run dev
-```
-
-3. Open your browser and navigate to `http://localhost:3000`
-
-## API Endpoints
-
-- `GET /` - Root endpoint
-- `POST /predict` - Upload image and get prediction
+The application will be available at `http://localhost:3000`
